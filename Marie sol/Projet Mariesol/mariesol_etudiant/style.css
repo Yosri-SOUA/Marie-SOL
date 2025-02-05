@@ -1,0 +1,194 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    
+}
+
+header {
+    
+    
+    text-align: center;
+    padding: 1em 0;
+    background: linear-gradient(#c09a4e, gold) no-repeat;
+}
+
+nav {
+    background-color: none;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: rgba(125, 107, 4, 0.653);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+}
+
+nav a:hover {
+    background-color: #989393;
+}
+
+nav .submenu {
+    display: none;
+    position: absolute;
+    background-color: #A67E2E;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav .has-submenu:hover .submenu {
+    display: block;
+}
+
+nav .submenu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+section {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+#header .ecole h1 {
+    color: rgba(91, 87, 87, 0.381);
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+form {
+   /* max-width: 900px; */
+   width:auto;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    /*display: inline-block; */
+    width: auto;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    background-color: #b26916;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;  
+}
+input[type="submit"]:hover {
+    background-color: #825b0c; /* Changer la couleur au survol */
+}
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+footer {
+    background: linear-gradient(gold,#c09a4e) no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+main {
+    display: flex; /* Utilise Flexbox pour aligner le contenu horizontalement */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-top: 40px; /* Ajoute une marge en haut pour l'espace */
+}
+table {
+    margin: 50px auto; /* Centrer horizontalement */
+    border-collapse: collapse; /* Fusionner les bordures des cellules */
+    width: 80%; /* Largeur du tableau */
+    font-family: Arial, sans-serif; /* Police de caractères */
+    border: 2px solid #333; /* Bordure autour du tableau */
+}
+
+table th,
+table td {
+    border: 1px solid #333; /* Bordure des cellules */
+    padding: 8px; /* Espacement interne */
+    text-align: center; /* Centrer le texte */
+}
+
+table th {
+    background-color: #f2f2f2; /* Couleur de fond pour les en-têtes */
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Couleur de fond pour les lignes paires */
+}
+
+table tr:hover {
+    background-color: #ddd; /* Couleur de fond au survol */
+}
+
+#textaccueil {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+#marie  {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

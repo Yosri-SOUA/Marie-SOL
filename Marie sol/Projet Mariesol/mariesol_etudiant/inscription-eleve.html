@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription d'un élève</title>
+    <link rel="stylesheet" href="style.css">
+      <!-- Chargement asynchrone du menu -->
+      <script>
+        var menuRequest = new XMLHttpRequest();
+        menuRequest.onreadystatechange = function () {
+            if (menuRequest.readyState == 4 && menuRequest.status == 200) {
+                // Insérer le menu après le titre dans le header
+                document.querySelector('header').insertAdjacentHTML('beforeend', menuRequest.responseText);
+            }
+        };
+        menuRequest.open('GET', 'menuMS.html', true);
+        menuRequest.send();
+    </script>
+      <!-- Chargement asynchrone du footer -->
+      <script>
+        var footerRequest = new XMLHttpRequest();
+        footerRequest.onreadystatechange = function () {
+            if (footerRequest.readyState == 4 && footerRequest.status == 200) {
+                document.body.insertAdjacentHTML('beforeend', footerRequest.responseText);
+            }
+        };
+        footerRequest.open('GET', 'footerMS.html', true);
+        footerRequest.send();
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Inscription d'un élève</h1>
+    </header>
+
+       <section>
+        <h2>Inscription d'un élève</h2>
+        <main>
+            <form action="ajouter_eleve.php" method="post">
+                <label for="codeeleve">Code de l'élève :</label>
+                <input type="text" id="codeeleve" name="codeeleve" required><br>  
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required><br>
+    
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required><br>
+    
+                <label for="date_naissance">Date de naissance :</label>
+                <input type="date" id="date_naissance" name="date_naissance" required><br>
+    
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse"><br>
+    
+                <label for="code_postal">Code postal :</label>
+                <input type="text" id="code_postal" name="code_postal"><br>
+    
+                <label for="ville">Ville :</label>
+                <input type="text" id="ville" name="ville"><br>
+    
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone"><br>
+    
+                <input type="submit" value="Ajouter élève">
+            </form>
+        </main>
+    </section>
+
+
+</body>
+
+</html>
