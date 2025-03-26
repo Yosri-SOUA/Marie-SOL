@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription d'un élève</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- Chargement asynchrone du menu -->
+    <script>
+        var menuRequest = new XMLHttpRequest();
+        menuRequest.onreadystatechange = function () {
+            if (menuRequest.readyState == 4 && menuRequest.status == 200) {
+                // Insérer le menu après le titre dans le header
+                document.querySelector('header').insertAdjacentHTML('beforeend', menuRequest.responseText);
+            }
+        };
+        menuRequest.open('GET', 'menuDISCIPLINE.html', true);
+        menuRequest.send();
+    </script>
+    <!-- Chargement asynchrone du footer -->
+    <script>
+        var footerRequest = new XMLHttpRequest();
+        footerRequest.onreadystatechange = function () {
+            if (footerRequest.readyState == 4 && footerRequest.status == 200) {
+                document.body.insertAdjacentHTML('beforeend', footerRequest.responseText);
+            }
+        };
+        footerRequest.open('GET', '../footerMS.html', true);
+        footerRequest.send();
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Ajout de la discipline</h1>
+    </header>
+
+    <section>
+        <h2>Ajout d'une discipline</h2>
+        <main>
+            <form action="ajouter_discipline.php" method="post">
+                <label for="codediscipline">Code de la discipline :</label>
+                <input type="text" id="codediscipline" name="codediscipline" required><br>
+
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required><br>
+
+                <input type="submit" value="Ajouter la discipline">
+            </form>
+        </main>
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des discipline enseignée</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- Chargement asynchrone du menu -->
+    <script>
+        var menuRequest = new XMLHttpRequest();
+        menuRequest.onreadystatechange = function () {
+            if (menuRequest.readyState == 4 && menuRequest.status == 200) {
+                // Insérer le menu après le titre dans le header
+                document.querySelector('header').insertAdjacentHTML('beforeend', menuRequest.responseText);
+            }
+        };
+        menuRequest.open('GET', 'menuCOURS.html', true);
+        menuRequest.send();
+    </script>
+    <!-- Chargement asynchrone du footer -->
+    <script>
+        var footerRequest = new XMLHttpRequest();
+        footerRequest.onreadystatechange = function () {
+            if (footerRequest.readyState == 4 && footerRequest.status == 200) {
+                document.body.insertAdjacentHTML('beforeend', footerRequest.responseText);
+            }
+        };
+        footerRequest.open('GET', '../footerMS.html', true);
+        footerRequest.send();
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Liste du planning</h1>
+    </header>
+
+    <section>
+        <h2>Liste du planning</h2>
+        <main>
+
+            <form action="affichagecours.php" method="GET">
+                <label for="jour_semaine">Choisir un jour :</label>
+                <select id="jour_semaine" name="jour_semaine">
+                    <option value="">Tous les jours</option>
+                    <option value="lundi">Lundi</option>
+                    <option value="mardi">Mardi</option>
+                    <option value="mercredi">Mercredi</option>
+                    <option value="jeudi">Jeudi</option>
+                    <option value="vendredi">Vendredi</option>
+                    <option value="samedi">Samedi</option>
+                    <option value="dimanche">Dimanche</option>
+                </select>
+                <input type="submit" value="CHOISIR">
+            </form>
+        </main>
+    </section>
+</body>
+
+</html>

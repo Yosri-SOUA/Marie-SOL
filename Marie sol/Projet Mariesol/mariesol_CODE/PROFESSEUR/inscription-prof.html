@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription d'un élève</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- Chargement asynchrone du menu -->
+    <script>
+        var menuRequest = new XMLHttpRequest();
+        menuRequest.onreadystatechange = function () {
+            if (menuRequest.readyState == 4 && menuRequest.status == 200) {
+                // Insérer le menu après le titre dans le header
+                document.querySelector('header').insertAdjacentHTML('beforeend', menuRequest.responseText);
+            }
+        };
+        menuRequest.open('GET', 'menuPROF.html', true);
+        menuRequest.send();
+    </script>
+    <!-- Chargement asynchrone du footer -->
+    <script>
+        var footerRequest = new XMLHttpRequest();
+        footerRequest.onreadystatechange = function () {
+            if (footerRequest.readyState == 4 && footerRequest.status == 200) {
+                document.body.insertAdjacentHTML('beforeend', footerRequest.responseText);
+            }
+        };
+        footerRequest.open('GET', '../footerMS.html', true);
+        footerRequest.send();
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Inscription d'un professeur</h1>
+    </header>
+
+    <section>
+        <h2>Inscription d'un professeur</h2>
+        <main>
+            <form action="ajouter_prof.php" method="post">
+
+                <label for="codeprof">Code du Professeur :</label>
+                <input type="text" id="codeprof" name="codeprof" required><br>
+
+                <label for="codediscipline">Code De la Discipline :</label>
+                <input type="text" id="codediscipline" name="codediscipline" required><br>
+
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required><br>
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required><br>
+
+                <label for="date_naissance">Date de naissance :</label>
+                <input type="date" id="date_naissance" name="date_naissance" required><br>
+
+                <label for="adresse1">Adresse 1:</label>
+                <input type="text" id="adresse1" name="adresse1"><br>
+
+                <label for="adresse2">Adresse 2:</label>
+                <input type="text" id="adresse2" name="adresse2"><br>
+
+                <label for="code_postal">Code postal :</label>
+                <input type="text" id="code_postal" name="code_postal"><br>
+
+                <label for="ville">Ville :</label>
+                <input type="text" id="ville" name="ville"><br>
+
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone"><br>
+
+                <input type="submit" value="Ajouter professeur">
+            </form>
+        </main>
+    </section>
+
+
+</body>
+
+</html>

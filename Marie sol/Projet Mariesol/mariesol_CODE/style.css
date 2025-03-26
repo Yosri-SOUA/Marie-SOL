@@ -1,0 +1,215 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 1em 0;
+    background: linear-gradient(#8b6b3f, #d4af37);
+    color: white;
+}
+
+nav {
+    background-color: #2e2e2e;
+    text-align: center;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #d4af37;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+nav .submenu {
+    display: none;
+    position: absolute;
+    background-color: #8b6b3f;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav .has-submenu:hover .submenu {
+    display: block;
+}
+
+nav .submenu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    text-align: center;
+    padding: 50px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+h2 {
+    color: #d4af37;
+}
+
+#header .ecole h1 {
+    color: rgba(255, 215, 0, 0.8);
+}
+
+p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+form {
+    width: auto;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #d4af37;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #444;
+    color: #fff;
+}
+
+input[type="submit"] {
+    width: auto;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    background-color: #d4af37;
+    color: black;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #b8860b;
+}
+
+button {
+    background-color: #d4af37;
+    color: black;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b8860b;
+}
+
+footer {
+    background: linear-gradient(#d4af37, #8b6b3f);
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    width: 80%;
+    font-family: Arial, sans-serif;
+    border: 2px solid #d4af37;
+    background-color: #333;
+    color: white;
+}
+
+table th,
+table td {
+    border: 1px solid #d4af37;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #8b6b3f;
+}
+
+table tr:nth-child(even) {
+    background-color: #444;
+}
+
+table tr:hover {
+    background-color: #555;
+}
+
+#textaccueil {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#marie {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.note {
+    position: fixed;
+    font-size: 30px; /* Taille des notes */
+    color: #ffcc00; /* Couleur dorée */
+    font-weight: bold;
+    user-select: none;
+    pointer-events: none;
+}

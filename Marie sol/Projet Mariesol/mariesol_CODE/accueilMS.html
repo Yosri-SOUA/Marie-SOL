@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var menuRequest = new XMLHttpRequest();
+        menuRequest.onreadystatechange = function () {
+            if (menuRequest.readyState == 4 && menuRequest.status == 200) {
+                // Insérer le menu après le titre dans le header
+                document.querySelector('header').insertAdjacentHTML('beforeend', menuRequest.responseText);
+            }
+        };
+        menuRequest.open('GET', 'menuMS.html', true);
+        menuRequest.send();
+    </script>
+    <!-- Chargement asynchrone du footer -->
+    <script>
+        var footerRequest = new XMLHttpRequest();
+        footerRequest.onreadystatechange = function () {
+            if (footerRequest.readyState == 4 && footerRequest.status == 200) {
+                document.body.insertAdjacentHTML('beforeend', footerRequest.responseText);
+            }
+        };
+        footerRequest.open('GET', 'footerMS.html', true);
+        footerRequest.send();
+    </script>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function createNote() {
+            const notes = ['♪', '♫', '♬', '♩']; // Différentes notes de musique
+            const note = document.createElement("div");
+            note.classList.add("note");
+            note.innerText = notes[Math.floor(Math.random() * notes.length)]; // Note aléatoire
+
+            // Position aléatoire sur l'écran
+            note.style.left = Math.random() * 100 + "vw";
+            note.style.top = "100vh"; // Départ en bas de l'écran
+
+            // Ajout au body
+            document.body.appendChild(note);
+
+            // Animation de montée
+            let animation = note.animate([
+                { transform: "translateY(0)", opacity: 1 },
+                { transform: "translateY(-100vh)", opacity: 0 }
+            ], {
+                duration: 5000, // Durée totale en ms
+                easing: "linear"
+            });
+
+            // Supprime l'élément après l'animation
+            animation.onfinish = () => note.remove();
+        }
+
+        // Générer une note toutes les 500ms
+        setInterval(createNote, 500);
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("background-music");
+        const button = document.getElementById("toggle-music");
+
+        button.addEventListener("click", function () {
+            if (audio.paused) {
+                audio.play();
+                button.innerText = "🔊"; // Icône pour "Son activé"
+            } else {
+                audio.pause();
+                button.innerText = "🔇"; // Icône pour "Son coupé"
+            }
+        });
+    });
+</script>
+
+
+<body>
+
+    <header>
+        <h1 id="ecole">École de musique MarieSol</h1>
+
+    </header>
+
+    <section id="marie">
+        <button id="toggle-music">🔇</button>
+        <audio id="background-music" autoplay loop>
+            <source src="musique.mp3" type="audio/mpeg">
+            Votre navigateur ne supporte pas l'élément audio.
+        </audio>
+        <h2>À propos de notre école</h2>
+        <p>L'école de musique MarieSol vous accueille.</p>
+        <img src="IMAGES/instruments.jpg" width=25% length=25% alt="Ecole de Musique MarieSol">
+    </section>
+
+    <!-- Chargement asynchrone du menu -->
+
+
+
+
+    <!-- Description de l'école -->
+    <section id="textaccueil">
+        <p> Bienvenue dans notre école MarieSol, une école dédiée à l'apprentissage de la musique par différents
+            instruments. </p>
+        <p> Pendant plusieurs années, nous allons vous accompagner afin de vous transmettre notre passion de la musique.
+        </p>
+        <p> Sur ce site web, vous pourrez vous inscrire à différents cours en fonction de votre instrument. </p>
+        <p> Vous pourrez de même consulter la liste des professeurs, le planning des cours et les disciplines enseignées
+            au sein de notre préstigieux établissemnt.</p>
+        <p> Merci d'avoir fait confiance à l'école MarieSol.</p>
+        <p> Nous espérons vous revoir bientôt!</p>
+    </section>
+
+
+
+</body>
+
+</html>
